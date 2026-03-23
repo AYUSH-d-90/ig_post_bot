@@ -27,7 +27,9 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           BASE_URL: ${{ secrets.BASE_URL }}
-        run: python ./ig_post_bot/bot.py
+        # This tells GitHub to go inside your subfolder before running Python
+        working-directory: ./ig_post_bot
+        run: python bot.py
 
       - name: Save Image to GitHub Pages
         run: |
