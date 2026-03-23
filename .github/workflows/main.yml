@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests google-generativeai Pillow
+          pip install google-genai requests Pillow
 
       - name: Run Bot
         env:
