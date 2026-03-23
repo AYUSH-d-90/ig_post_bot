@@ -19,7 +19,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install google-genai requests Pillow
+          python -m pip install --upgrade pip
+          pip install google-generativeai requests Pillow
+          pip list  # This will print a list of everything installed so we can PROVE it's there
 
       - name: Run Bot
         env:
