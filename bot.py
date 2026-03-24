@@ -3,10 +3,25 @@ import requests
 import google.generativeai as genai
 from PIL import Image, ImageDraw, ImageFont
 
-# 1. THE BRAIN (Gemini 1.5 Flash)
+# 1. SETUP AI (The Brain)
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-# Using 'models/' prefix ensures the 404 error stays away
-model = genai.GenerativeModel('models/gemini-1.5-flash')
+
+# We will try both versions of the name to be 100% sure
+try:
+    model = genai.GenerativeModel('gemini-1.5-flash')
+    print("Trying Model Name: gemini-1.5-flash")
+    prompt = "Write one short, exciting tech news headline for today in 10 words. No emojis."
+    ai_response = model.generate_content(prompt)
+    news_text = ai_response.text.strip()
+except Exception:
+    try:
+        model = genai.GenerativeModel('models/gemini-1.5-flash')
+        print("Trying Model Name: models/gemini-1.5-flash")
+        ai_response = model.generate_content(prompt)
+        news_text = ai_response.text.strip()
+    except Exception as e:
+        print(f"Final AI Error: {e}")
+        news_text = "AI is changing the world in 2026!" # Backup if BOTH fail
 
 try:
     prompt = "Write one short, exciting tech news headline for today in 10 words. No emojis."
