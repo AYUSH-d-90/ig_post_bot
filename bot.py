@@ -29,7 +29,15 @@ def publish_to_ig(caption):
     post_url = f"https://graph.facebook.com/v19.0/{IG_USER_ID}/media"
     payload = {'image_url': image_url, 'caption': caption, 'access_token': ACCESS_TOKEN}
     r = requests.post(post_url, data=payload).json()
-    
+    # Look for your "post" or "requests" line and change it to this:
+response = requests.post(url, data=payload)
+result = response.json()
+
+print(f"DEBUG - Meta Response: {result}")
+
+if "error" in result:
+    print(f"ERROR DETECTED: {result['error']['message']}")
+    exit(1) # This forces the GitHub Action to turn RED so you know it failed
     if 'id' in r:
         # Step 2: Publish the upload
         publish_url = f"https://graph.facebook.com/v19.0/{IG_USER_ID}/media_publish"
