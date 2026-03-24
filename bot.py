@@ -39,13 +39,34 @@ image_url = "https://ayush-d-90.github.io/ig_post_bot/post.jpg"
 payload = {'image_url': image_url, 'caption': news_text, 'access_token': META_ACCESS_TOKEN}
 r1 = requests.post(container_url, data=payload)
 res1 = r1.json()
+import time # Make sure this is at the very top of your file!
 
-# STEP B: Actually push the 'Publish' button
+# ... (Keep your Step A: Upload code the same)
+
 if "id" in res1:
     creation_id = res1['id']
-    publish_payload = {'creation_id': creation_id, 'access_token': META_ACCESS_TOKEN}
-    r2 = requests.post(publish_url, data=publish_payload)
-    print(f"SUCCESS: {r2.json()}")
+    print(f"Upload Success! Container ID: {creation_id}. Waiting for Meta to process...")
+    
+    # THE RETRY LOOP: Try 3 times, waiting 30 seconds between each
+    for attempt in range(3):
+        time.sleep(30) # Give Meta 30 seconds to "digest" the image
+        
+        publish_payload = {
+            'creation_id': creation_id,
+            'access_token': META_ACCESS_TOKEN
+        }
+        
+        r2 = requests.post(publish_url, data=publish_payload)
+        res2 = r2.json()
+        
+        if "id" in res2:
+            print(f"FINAL SUCCESS! Post ID: {res2['id']}")
+            break # Exit the loop because we succeeded!
+        else:
+            print(f"Attempt {attempt + 1} failed: {res2.get('error', {}).get('message')}")
+            if attempt == 2: # If it's the last attempt
+                print("Could not publish after 3 tries.")
+                exit(1)
 else:
-    print(f"ERROR: {res1.get('error', {}).get('message')}")
+    print(f"FAILED AT UPLOAD: {res1.get('error', {}).get('message')}")
     exit(1)
