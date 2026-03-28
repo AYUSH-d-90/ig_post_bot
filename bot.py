@@ -4,12 +4,12 @@ import requests
 import google.generativeai as genai
 from PIL import Image, ImageDraw, ImageFont
 import textwrap
-from datetime import datetime
 
+# Updated to match your exact GitHub Secret names
+IG_USER_ID = os.getenv("IG_USER_ID")
 GENAI_API_KEY = os.getenv("GEMINI_API_KEY")
-INSTAGRAM_ACCOUNT_ID = os.getenv("INSTAGRAM_ACCOUNT_ID")
-ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
-REPO_URL = os.getenv("REPO_URL") 
+ACCESS_TOKEN = os.getenv("META_ACCESS_TOKEN") # Using META_ACCESS_TOKEN
+BASE_URL = os.getenv("BASE_URL") # Using BASE_URL instead of REPO_URL
 
 genai.configure(api_key=GENAI_API_KEY)
 model = genai.GenerativeModel('gemini-2.5-flash')
@@ -23,7 +23,6 @@ def get_tech_news():
 def create_image(headline):
     img = Image.new('RGB', (1080, 1080), color=(15, 15, 15))
     draw = ImageDraw.Draw(img)
-    
     try:
         font = ImageFont.truetype("arial.ttf", 65)
     except:
@@ -42,9 +41,10 @@ def create_image(headline):
     return filename
 
 def post_to_instagram(image_filename, caption):
-    image_url = f"{REPO_URL}{image_filename}?v={int(time.time())}"
+    # Combines BASE_URL with the unique filename
+    image_url = f"{BASE_URL}{image_filename}?v={int(time.time())}"
+    post_url = f"https://graph.facebook.com/v22.0/{IG_USER_ID}/media"
     
-    post_url = f"https://graph.facebook.com/v22.0/{INSTAGRAM_ACCOUNT_ID}/media"
     payload = {
         'image_url': image_url,
         'caption': caption,
@@ -55,11 +55,11 @@ def post_to_instagram(image_filename, caption):
     result = r.json()
     
     if 'id' not in result:
-        print(result)
+        print(f"Container Error: {result}")
         return
 
     creation_id = result['id']
-    publish_url = f"https://graph.facebook.com/v22.0/{INSTAGRAM_ACCOUNT_ID}/media_publish"
+    publish_url = f"https://graph.facebook.com/v22.0/{IG_USER_ID}/media_publish"
     
     for attempt in range(3):
         time.sleep(45)
@@ -67,8 +67,8 @@ def post_to_instagram(image_filename, caption):
             'creation_id': creation_id,
             'access_token': ACCESS_TOKEN
         })
-        
         if publish_res.status_code == 200:
+            print("Post Successful!")
             return
             
 if __name__ == "__main__":
@@ -77,4 +77,4 @@ if __name__ == "__main__":
         img_file = create_image(title)
         post_to_instagram(img_file, f"{title}\n\n{desc}\n\n#tech #ai #automation")
     except Exception as e:
-        print(e)
+        print(f"Runtime Error: {e}")
