@@ -1,41 +1,39 @@
 name: Daily Tech Post
-
 on:
   schedule:
-    - cron: '0 2 * * *' # Runs at 7:30 AM IST (2:00 AM UTC) daily
-  workflow_dispatch: # Allows you to run it manually for testing
+    - cron: '0 12 * * *' # Runs daily
+  workflow_dispatch: # Allows manual run
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v4
+      
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.10'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install google-generativeai requests Pillow
-          pip list  # This will print a list of everything installed so we can PROVE it's there
+        run: pip install google-generativeai Pillow requests
 
-      - name: Run Bot
+      - name: Generate Content and Image
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
-          BASE_URL: ${{ secrets.BASE_URL }}
-        run: |
-          python -u bot.py  # The -u flag forces Python to show all logs instantly
+        run: python bot.py # This creates latest_post.jpg and caption.txt
 
-      - name: Save Image to GitHub Pages
+      - name: Commit and Push Image
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add post.jpg
-          git commit -m "Update daily post image" || exit 0
+          git add latest_post.jpg
+          git commit -m "Update daily post image"
           git push
+        
+      - name: Post to Instagram
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          BASE_URL: ${{ secrets.BASE_URL }}
+        run: python -c "import bot; import os; f=open('caption.txt'); cap=f.read(); bot.post_to_instagram('latest_post.jpg', cap)"
