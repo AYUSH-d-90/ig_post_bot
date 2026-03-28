@@ -12,7 +12,7 @@ ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 REPO_URL = os.getenv("REPO_URL") 
 
 genai.configure(api_key=GENAI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 def get_tech_news():
     prompt = "Give me one trending tech news headline and a 3-sentence caption. Format: Headline | Caption"
