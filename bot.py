@@ -13,8 +13,15 @@ BASE_URL = os.getenv("BASE_URL")
 genai.configure(api_key=GENAI_API_KEY)
 model = genai.GenerativeModel('gemini-2.5-flash')
 
+import random
+
 def get_tech_news():
-    prompt = "Give me one trending tech news headline and a 3-sentence caption. Format: Headline | Caption"
+    # Adding a random "seed" word forces the AI to pick different topics
+    topics = ["AI", "Hardware", "Robotics", "SpaceTech", "Cybersecurity", "Software"]
+    chosen_topic = random.choice(topics)
+    
+    prompt = f"Give me one unique, recent news headline about {chosen_topic} and a 3-sentence caption. Format: Headline | Caption. Ensure it is different from common daily headlines."
+    
     response = model.generate_content(prompt)
     data = response.text.split("|")
     return data[0].strip(), data[1].strip()
