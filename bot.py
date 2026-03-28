@@ -35,19 +35,15 @@ def create_image(headline):
         draw.text(((1080 - w) / 2, y_text), line, font=font, fill=(255, 255, 255))
         y_text += 80
 
-    filename = f"post_{int(time.time())}.jpg"
+    filename = "latest_post.jpg" # Kept simple for the URL
     img.save(filename)
     return filename
 
 def post_to_instagram(image_filename, caption):
-    # Safety Check: If BASE_URL is None, this will fail gracefully
-    if not BASE_URL:
-        print("ERROR: BASE_URL secret is missing!")
-        return
-
+    # This combines your secret BASE_URL with the filename
     image_url = f"{BASE_URL}{image_filename}?v={int(time.time())}"
-    print(f"DEBUG: Attempting to post with URL: {image_url}")
-    
+    print(f"DEBUG: Posting URL is {image_url}")
+
     post_url = f"https://graph.facebook.com/v22.0/{IG_USER_ID}/media"
     payload = {
         'image_url': image_url,
@@ -65,9 +61,9 @@ def post_to_instagram(image_filename, caption):
     creation_id = result['id']
     publish_url = f"https://graph.facebook.com/v22.0/{IG_USER_ID}/media_publish"
     
-    for attempt in range(3):
-        print(f"Waiting for Meta to process... Attempt {attempt+1}")
-        time.sleep(60) # Increased to 60s to ensure GitHub has updated the file
+    # Retry loop to wait for Meta to finish downloading
+    for attempt in range(5):
+        time.sleep(60)
         publish_res = requests.post(publish_url, data={
             'creation_id': creation_id,
             'access_token': ACCESS_TOKEN
@@ -75,13 +71,13 @@ def post_to_instagram(image_filename, caption):
         if publish_res.status_code == 200:
             print("Post Successful!")
             return
-        else:
-            print(f"Publishing Error: {publish_res.json()}")
-            
+        print(f"Attempt {attempt+1} failed, retrying...")
+
 if __name__ == "__main__":
-    try:
-        title, desc = get_tech_news()
-        img_file = create_image(title)
-        post_to_instagram(img_file, f"{title}\n\n{desc}\n\n#tech #ai #automation")
-    except Exception as e:
-        print(f"Runtime Error: {e}")
+    title, desc = get_tech_news()
+    img_file = create_image(title)
+    # We save the caption to a file so the next step in the YAML can read it
+    with open("caption.txt", "w") as f:
+        f.write(f"{title}\n\n{desc}\n\n#tech #automation")
+    # Actually call the post function
+    post_to_instagram(img_file, f"{title}\n\n{desc}")
