@@ -1,8 +1,13 @@
 name: Daily Tech Post
 on:
   schedule:
-    - cron: '0 12 * * *' # Runs daily
-  workflow_dispatch: # Allows manual run
+    - cron: '0 12 * * *' 
+  workflow_dispatch: 
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'latest_post.jpg'
+      - 'caption.txt'
 
 jobs:
   build:
@@ -21,14 +26,14 @@ jobs:
       - name: Generate Content and Image
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python bot.py # This creates latest_post.jpg and caption.txt
+        run: python bot.py
 
       - name: Commit and Push Image
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add latest_post.jpg
-          git commit -m "Update daily post image"
+          git add latest_post.jpg caption.txt
+          git commit -m "Update daily post image [skip ci]"
           git push
         
       - name: Post to Instagram
