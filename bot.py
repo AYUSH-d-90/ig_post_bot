@@ -16,15 +16,25 @@ model = genai.GenerativeModel('gemini-2.5-flash')
 import random
 
 def get_tech_news():
-    # Adding a random "seed" word forces the AI to pick different topics
-    topics = ["AI", "Hardware", "Robotics", "SpaceTech", "Cybersecurity", "Software"]
-    chosen_topic = random.choice(topics)
-    
-    prompt = f"Give me one unique, recent news headline about {chosen_topic} and a 3-sentence caption. Format: Headline | Caption. Ensure it is different from common daily headlines."
-    
-    response = model.generate_content(prompt)
-    data = response.text.split("|")
-    return data[0].strip(), data[1].strip()
+    try:
+        # We use a unique separator '@@@' because Gemini is less likely to use it accidentally
+        prompt = "Provide one trending tech news. Format: TITLE @@@ DESCRIPTION. Do not include any other text."
+        response = model.generate_content(prompt)
+        text = response.text
+        
+        # This is where your error was happening. Now we check the length first.
+        if "@@@" in text:
+            data = text.split("@@@")
+            if len(data) >= 2:
+                return data[0].strip(), data[1].strip()
+        
+        # FALLBACK: If Gemini messes up the format, this keeps the bot alive
+        print("Format error from AI, using fallback parsing.")
+        return "Tech Update", text.strip()[:100] 
+
+    except Exception as e:
+        print(f"Error calling Gemini: {e}")
+        return "Tech News", "Check back later for more updates!"
 
 def create_image(headline):
     img = Image.new('RGB', (1080, 1080), color=(15, 15, 15))
