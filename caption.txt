@@ -1,5 +1,5 @@
-AI PCs Surge with New NPU-Powered Laptops
+Anthropic Unveils Faster, Cheaper Claude 3.5 Sonnet
 
-Major tech companies are releasing a wave of "AI PCs" equipped with dedicated Neural Processing Units (NPUs) to accelerate on-device AI tasks, promising improved performance and efficiency for a growing array of AI applications directly on personal computers.
+Anthropic launched Claude 3.5 Sonnet, its new flagship AI model, claiming it outperforms the larger Claude 3 Opus on various benchmarks while being significantly faster and more cost-effective. The model shows improved reasoning, coding, and nuanced understanding.
 
 #tech #automation
