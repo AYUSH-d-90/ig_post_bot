@@ -1,5 +1,5 @@
-Anthropic Unveils Faster, Cheaper Claude 3.5 Sonnet
+Microsoft Copilot+ PCs Face Initial Hurdles
 
-Anthropic launched Claude 3.5 Sonnet, its new flagship AI model, claiming it outperforms the larger Claude 3 Opus on various benchmarks while being significantly faster and more cost-effective. The model shows improved reasoning, coding, and nuanced understanding.
+Early reviews and user experiences for Microsoft's new AI-powered Copilot+ PCs highlight promising hardware but significant software limitations and missing core AI features at launch, leading to some initial disappointment among users and critics.
 
 #tech #automation
