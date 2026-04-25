@@ -1,5 +1,5 @@
-Apple Intelligence Integration
+Microsoft Unveils Copilot+ PCs
 
-Apple unveiled "Apple Intelligence," its suite of AI features deeply integrated into iOS 18, iPadOS 18, and macOS Sequoia, promising personalized and context-aware assistance, including a more capable Siri and a partnership with OpenAI to bring ChatGPT to its devices.
+Microsoft introduces a new generation of Windows PCs powered by dedicated AI processors, enabling advanced on-device generative AI features like Recall and Cocreator, promising significant performance and efficiency gains.
 
 #tech #automation
