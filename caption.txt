@@ -1,5 +1,5 @@
-Nvidia Briefly Becomes World's Most Valuable Company
+OpenAI Unveils Sora, a Text-to-Video AI Model
 
-Driven by the insatiable demand for its AI chips, Nvidia's market capitalization surged past Microsoft's, briefly making it the world's most valuable public company.
+OpenAI has introduced Sora, a new AI model capable of generating realistic and imaginative videos up to a minute long from simple text prompts, showcasing significant advancements in AI's understanding of the physical world and content creation.
 
 #tech #automation
