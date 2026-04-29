@@ -1,5 +1,5 @@
-OpenAI Unveils Sora, a Text-to-Video AI Model
+OpenAI's Sora Creates Realistic Videos from Text
 
-OpenAI has introduced Sora, a new AI model capable of generating realistic and imaginative videos up to a minute long from simple text prompts, showcasing significant advancements in AI's understanding of the physical world and content creation.
+OpenAI has unveiled Sora, a groundbreaking AI model capable of generating highly realistic and imaginative videos, up to a minute long, from simple text instructions, marking a significant leap in AI's ability to understand and simulate the physical world.
 
 #tech #automation
