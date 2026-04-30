@@ -1,5 +1,5 @@
-OpenAI's Sora Creates Realistic Videos from Text
+OpenAI Launches GPT-4o with Real-Time Multimodal AI Capabilities
 
-OpenAI has unveiled Sora, a groundbreaking AI model capable of generating highly realistic and imaginative videos, up to a minute long, from simple text instructions, marking a significant leap in AI's ability to understand and simulate the physical world.
+OpenAI unveiled its new flagship AI model, GPT-4o, which offers real-time reasoning across audio, vision, and text. The "omni" model provides significantly faster responses and more natural human-computer interaction, bringing expressive voice and vision capabilities to ChatGPT users.
 
 #tech #automation
