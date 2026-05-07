@@ -1,5 +1,5 @@
-NVIDIA Unveils Blackwell Platform
+Apple Dives Deep Into AI with 'Apple Intelligence'
 
-NVIDIA announced its next-generation AI chip architecture, Blackwell, at GTC, promising a massive leap in processing power and efficiency for large language models and generative AI.
+At WWDC, Apple announced 'Apple Intelligence,' its new suite of generative AI features integrated across iOS, iPadOS, and macOS, emphasizing privacy and on-device processing. Key features include an enhanced Siri, AI writing tools, image creation, and optional ChatGPT integration.
 
 #tech #automation
