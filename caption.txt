@@ -1,5 +1,5 @@
-Apple Dives Deep Into AI with 'Apple Intelligence'
+OpenAI Unveils GPT-4o with Real-Time Multimodal Capabilities
 
-At WWDC, Apple announced 'Apple Intelligence,' its new suite of generative AI features integrated across iOS, iPadOS, and macOS, emphasizing privacy and on-device processing. Key features include an enhanced Siri, AI writing tools, image creation, and optional ChatGPT integration.
+OpenAI has launched GPT-4o, a new flagship AI model capable of processing and generating content across text, audio, and video in real-time, offering more natural and emotionally expressive human-AI interactions.
 
 #tech #automation
