@@ -1,5 +1,5 @@
-OpenAI Unveils GPT-4o with Real-Time Multimodal Capabilities
+Apple Intelligence Brings Generative AI to Devices
 
-OpenAI has launched GPT-4o, a new flagship AI model capable of processing and generating content across text, audio, and video in real-time, offering more natural and emotionally expressive human-AI interactions.
+Apple unveiled "Apple Intelligence" at WWDC, a suite of generative AI features deeply integrated across iOS 18, iPadOS 18, and macOS Sequoia, enhancing Siri, writing tools, and introducing ChatGPT integration.
 
 #tech #automation
