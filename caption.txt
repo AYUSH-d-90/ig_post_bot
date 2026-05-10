@@ -1,5 +1,5 @@
-Apple Intelligence Brings Generative AI to Devices
+Apple Expected to Unveil Major AI Features at WWDC 2024
 
-Apple unveiled "Apple Intelligence" at WWDC, a suite of generative AI features deeply integrated across iOS 18, iPadOS 18, and macOS Sequoia, enhancing Siri, writing tools, and introducing ChatGPT integration.
+Apple is highly anticipated to announce a comprehensive suite of generative AI capabilities across its operating systems, including an overhaul for Siri and AI-enhanced apps, with a potential partnership with OpenAI, at its upcoming developer conference.
 
 #tech #automation
