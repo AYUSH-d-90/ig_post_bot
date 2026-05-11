@@ -1,5 +1,5 @@
-Apple Expected to Unveil Major AI Features at WWDC 2024
+Apple Unveils "Apple Intelligence" AI System
 
-Apple is highly anticipated to announce a comprehensive suite of generative AI capabilities across its operating systems, including an overhaul for Siri and AI-enhanced apps, with a potential partnership with OpenAI, at its upcoming developer conference.
+Apple introduced "Apple Intelligence" at WWDC, a new generative AI system deeply integrated across iOS, iPadOS, and macOS, bringing features like an upgraded Siri, AI writing tools, custom emojis, and a partnership with OpenAI for ChatGPT access.
 
 #tech #automation
