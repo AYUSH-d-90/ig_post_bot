@@ -1,5 +1,5 @@
-Apple Unveils "Apple Intelligence" AI System
+Apple Intelligence Unveiled at WWDC
 
-Apple introduced "Apple Intelligence" at WWDC, a new generative AI system deeply integrated across iOS, iPadOS, and macOS, bringing features like an upgraded Siri, AI writing tools, custom emojis, and a partnership with OpenAI for ChatGPT access.
+Apple introduced "Apple Intelligence," its new personal AI system integrated deeply into iOS 18, iPadOS 18, and macOS Sequoia, bringing generative AI capabilities for writing, image creation, and an enhanced Siri, with optional ChatGPT access.
 
 #tech #automation
