@@ -1,5 +1,5 @@
-Nvidia Overtakes Microsoft as World's Most Valuable Company
+OpenAI Unveils Sora Text-to-Video AI
 
-Chipmaker Nvidia briefly surpassed Microsoft and Apple to become the world's most valuable publicly traded company, reaching a market capitalization of over $3.33 trillion, driven by the surging demand for its AI chips.
+OpenAI showcased Sora, its powerful new AI model capable of generating highly realistic and imaginative minute-long videos from simple text prompts, marking a significant advancement in generative AI technology.
 
 #tech #automation
