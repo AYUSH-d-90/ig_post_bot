@@ -1,5 +1,5 @@
-OpenAI Unveils Sora Text-to-Video AI
+Apple Intelligence
 
-OpenAI showcased Sora, its powerful new AI model capable of generating highly realistic and imaginative minute-long videos from simple text prompts, marking a significant advancement in generative AI technology.
+Apple is set to unveil "Apple Intelligence," its comprehensive suite of generative AI features for iOS 18, at WWDC, promising deeply integrated AI capabilities across its ecosystem.
 
 #tech #automation
