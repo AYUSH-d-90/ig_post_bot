@@ -1,5 +1,5 @@
-Apple Intelligence
+Apple Unveils "Apple Intelligence"
 
-Apple is set to unveil "Apple Intelligence," its comprehensive suite of generative AI features for iOS 18, at WWDC, promising deeply integrated AI capabilities across its ecosystem.
+Apple officially announced its new suite of generative AI features, "Apple Intelligence," integrated across iOS, iPadOS, and macOS, promising enhanced Siri, improved writing tools, and personalized image creation, alongside optional ChatGPT integration.
 
 #tech #automation
