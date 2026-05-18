@@ -1,5 +1,5 @@
-Apple Unveils "Apple Intelligence"
+Apple Unveils 'Apple Intelligence'
 
-Apple officially announced its new suite of generative AI features, "Apple Intelligence," integrated across iOS, iPadOS, and macOS, promising enhanced Siri, improved writing tools, and personalized image creation, alongside optional ChatGPT integration.
+DESCRIPTION: Apple revealed its new generative AI system, "Apple Intelligence," integrated deeply into iOS 18, iPadOS 18, and macOS Sequoia, offering features like enhanced Siri, writing tools, image generation, and a partnership with OpenAI to integrate ChatGPT directly into its ecosystem.
 
 #tech #automation
