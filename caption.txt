@@ -1,5 +1,5 @@
-Google's AI Overviews Spark Controversy Over Flawed Responses
+Apple Unveils "Apple Intelligence" AI System
 
-Google's new AI Overview feature in search results has gone viral for providing inaccurate and sometimes bizarre information, prompting widespread discussion and criticism regarding the reliability and readiness of large language models for mainstream use.
+Apple revealed its new AI system, "Apple Intelligence," integrated across iOS, iPadOS, and macOS, featuring enhanced Siri, improved writing tools, image generation, and a partnership with OpenAI for ChatGPT access.
 
 #tech #automation
