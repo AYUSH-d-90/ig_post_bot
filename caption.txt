@@ -1,5 +1,5 @@
-Apple Unveils "Apple Intelligence" AI System
+NVIDIA Unveils Blackwell Platform for Next-Gen AI
 
-Apple revealed its new AI system, "Apple Intelligence," integrated across iOS, iPadOS, and macOS, featuring enhanced Siri, improved writing tools, image generation, and a partnership with OpenAI for ChatGPT access.
+NVIDIA CEO Jensen Huang announced the Blackwell B200 AI chip and GB200 Superchip at GTC 2024, promising a massive leap in AI performance and efficiency, designed for training trillion-parameter large language models.
 
 #tech #automation
