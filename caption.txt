@@ -1,5 +1,5 @@
-NVIDIA Unveils Blackwell Platform for Next-Gen AI
+Apple Vision Pro Debut Performance
 
-NVIDIA CEO Jensen Huang announced the Blackwell B200 AI chip and GB200 Superchip at GTC 2024, promising a massive leap in AI performance and efficiency, designed for training trillion-parameter large language models.
+Early sales estimates for Apple's Vision Pro spatial computer range from 160,000 to 180,000 units during its launch weekend, according to analysts. User feedback is also rolling in, highlighting the device's immersive experience but also concerns regarding its weight, battery life, and current app availability.
 
 #tech #automation
