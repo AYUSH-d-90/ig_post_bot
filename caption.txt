@@ -1,5 +1,5 @@
-Apple Vision Pro Debut Performance
+Google's Gemini 1.5 Pro Unleashes Massive Context Window
 
-Early sales estimates for Apple's Vision Pro spatial computer range from 160,000 to 180,000 units during its launch weekend, according to analysts. User feedback is also rolling in, highlighting the device's immersive experience but also concerns regarding its weight, battery life, and current app availability.
+Google introduces Gemini 1.5 Pro, its latest AI model, boasting an unprecedented 1 million-token context window that enables it to process and analyze immense amounts of data, equivalent to hours of video or thousands of pages of text, in a single query.
 
 #tech #automation
