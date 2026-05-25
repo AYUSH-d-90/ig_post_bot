@@ -1,5 +1,5 @@
-Google's Gemini 1.5 Pro Unleashes Massive Context Window
+Apple Intelligence Unveiled
 
-Google introduces Gemini 1.5 Pro, its latest AI model, boasting an unprecedented 1 million-token context window that enables it to process and analyze immense amounts of data, equivalent to hours of video or thousands of pages of text, in a single query.
+Apple introduced "Apple Intelligence," its personalized AI system integrated across iOS 18, iPadOS 18, and macOS Sequoia, bringing enhanced Siri, writing tools, and image generation, with a focus on privacy and an optional ChatGPT integration.
 
 #tech #automation
