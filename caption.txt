@@ -1,5 +1,5 @@
-Apple Intelligence Unveiled
+Apple Unveils "Apple Intelligence"
 
-Apple introduced "Apple Intelligence," its personalized AI system integrated across iOS 18, iPadOS 18, and macOS Sequoia, bringing enhanced Siri, writing tools, and image generation, with a focus on privacy and an optional ChatGPT integration.
+At WWDC, Apple announced its new personal intelligence system, deeply integrating generative AI models across iOS, iPadOS, and macOS for enhanced Siri, writing tools, image generation, and a partnership with OpenAI for ChatGPT access.
 
 #tech #automation
