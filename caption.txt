@@ -1,5 +1,5 @@
-Apple Unveils "Apple Intelligence"
+Apple Debuts "Apple Intelligence" at WWDC
 
-At WWDC, Apple announced its new personal intelligence system, deeply integrating generative AI models across iOS, iPadOS, and macOS for enhanced Siri, writing tools, image generation, and a partnership with OpenAI for ChatGPT access.
+Apple unveiled its personalized generative AI suite, "Apple Intelligence," deeply integrating AI capabilities across iOS, iPadOS, and macOS, alongside a partnership with OpenAI to bring ChatGPT to Siri.
 
 #tech #automation
