@@ -1,5 +1,5 @@
-Apple Unveils "Apple Intelligence" AI System
+OpenAI Unveils Sora
 
-Apple revealed its new generative AI suite, "Apple Intelligence," deeply integrated across iOS 18, iPadOS 18, and macOS Sequoia, offering enhanced Siri, writing tools, image creation, and a strategic partnership with OpenAI to power advanced features.
+OpenAI revealed Sora, a new text-to-video AI model capable of generating realistic and imaginative scenes up to a minute long from simple text prompts, showcasing unprecedented visual fidelity and complex camera motions.
 
 #tech #automation
