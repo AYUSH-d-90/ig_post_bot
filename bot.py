@@ -56,45 +56,57 @@ def create_image(headline):
     img.save(filename)
     return filename
 
-def post_to_instagram(image_filename, caption):
-    # This combines your secret BASE_URL with the filename
-    image_url = f"{BASE_URL}{image_filename}?v={int(time.time())}"
-    print(f"DEBUG: Posting URL is {image_url}")
+def post_to_instagram(image_name, caption):
+    # 1. Wait for GitHub CDN to refresh so Meta doesn't 404
+    print("Waiting 15 seconds for GitHub to process the image...")
+    time.sleep(15)
 
-    post_url = f"https://graph.facebook.com/v22.0/{IG_USER_ID}/media"
-    payload = {
+    # 2. Get environment variables
+    ig_user_id = os.getenv('IG_USER_ID')
+    access_token = os.getenv('META_ACCESS_TOKEN')
+    repo = os.getenv('GITHUB_REPOSITORY') 
+    
+    # Cache buster to force Meta to grab the newest file
+    timestamp = int(time.time())
+    image_url = f"https://raw.githubusercontent.com/{repo}/main/{image_name}?v={timestamp}"
+    
+    print(f"Target Image URL: {image_url}")
+
+    # 3. STEP 1: Create the Media Container
+    container_url = f"https://graph.facebook.com/v19.0/{ig_user_id}/media"
+    container_payload = {
         'image_url': image_url,
         'caption': caption,
-        'access_token': ACCESS_TOKEN
+        'access_token': access_token
     }
     
-    r = requests.post(post_url, data=payload)
-    result = r.json()
+    print("Creating Meta container...")
+    container_res = requests.post(container_url, data=container_payload).json()
+    print(f"Container Response: {container_res}")
     
-    if 'id' not in result:
-        print(f"Container Error: {result}")
+    # SAFETY: Stop the script if Meta didn't give us an ID
+    if 'id' not in container_res:
+        print("CRITICAL: Container creation failed. Stopping script to avoid 'None' error.")
         return
+        
+    container_id = container_res['id']
 
-    creation_id = result['id']
-    publish_url = f"https://graph.facebook.com/v22.0/{IG_USER_ID}/media_publish"
+    # 4. Wait for Meta to finish processing the image internally
+    print("Container created. Waiting 5 seconds before publishing...")
+    time.sleep(5)
+
+    # 5. STEP 2: Publish the Container to Feed
+    publish_url = f"https://graph.facebook.com/v19.0/{ig_user_id}/media_publish"
+    publish_payload = {
+        'creation_id': container_id,
+        'access_token': access_token
+    }
     
-    # Retry loop to wait for Meta to finish downloading
-    for attempt in range(5):
-        time.sleep(60)
-        publish_res = requests.post(publish_url, data={
-            'creation_id': creation_id,
-            'access_token': ACCESS_TOKEN
-        })
-        if publish_res.status_code == 200:
-            print("Post Successful!")
-            return
-        print(f"Attempt {attempt+1} failed, retrying...")
+    print("Publishing to Instagram...")
+    publish_res = requests.post(publish_url, data=publish_payload).json()
+    print(f"Publish Response: {publish_res}")
 
-if __name__ == "__main__":
-    title, desc = get_tech_news()
-    img_file = create_image(title)
-    # We save the caption to a file so the next step in the YAML can read it
-    with open("caption.txt", "w") as f:
-        f.write(f"{title}\n\n{desc}\n\n#tech #automation")
-    # Actually call the post function
-    post_to_instagram(img_file, f"{title}\n\n{desc}")
+    if 'id' in publish_res:
+        print("Success! Post is live on Instagram.")
+    else:
+        print("Failed to publish container.")
